@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt]{article}
+
+% Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}  % für korrekte Anführungszeichen
+\usepackage[backend=biber, style=apa6]{biblatex}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+% Literaturdatei einbinden
+\addbibresource{quellen.bib}
+
+\title{Einführung in \LaTeX}
+\author{Anisa Beispiel}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Was ist \LaTeX?}
+\LaTeX{} ist ein Textsatzsystem, das häufig in der Wissenschaft verwendet wird.
+Es trennt Inhalt und Formatierung, was saubere und reproduzierbare Dokumente ermöglicht.
+
+Ein Beispiel für eine Quelle ist \cite{DemoQuelle}.
+
+\section{Fazit}
+Mit \LaTeX{} lassen sich professionelle Dokumente effizient erstellen.
+
+\newpage
+\printbibliography
+
+\end{document}
