@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{color}
+\usepackage[backend=biber, style=apa6]{biblatex}
+\addbibresource{quellen.bib}
+
+\linespread{1.5}
+
+\newcommand{\pagetitle}[1]{\newpage\underline{#1}\\}
+
+
+\begin{document}
+
+\pagetitle{Seitentitel}
+
+Hallo Welt!
+\textcolor{red}{Dieser Text ist rot} und \textcolor{green}{grün}.
+
+\textbf{Fetter Text}
+\textit{Dies ist kursiv.}
+\underline{Hauptsache}
+\textbf{\underline{sehr wichtiger Text}}
+
+Diese Aussage hat eine Quelle: \cite{DemoQuelle}
+
+Und dieser Satz eine Fußnote.\footcite{DemoQuelle}
+
+\include{Kapitel/zweitesKapitel}
+
+\pagetitle{Nächster Seitentitel}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\\ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\newpage
+\printbibliography
+
+\end{document}
