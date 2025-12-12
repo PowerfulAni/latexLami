@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[backend=biber, style=apa6]{biblatex}
+\usepackage{array} % For vertical centering in tabular
+\usepackage[margin=2cm]{geometry}
+\usepackage{helvet} % or try [scaled]{avant}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+% display quotation marks ("") as their german counterparts („“)
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+\graphicspath{{images/}}
+
+\renewcommand\familydefault{\sfdefault}
+
+\definecolor{dbteal}{HTML}{1BA099} % Define the custom color
+
+\title{Installation von MiKTeX auf Windows}
+\date{}
+
+% Define the highlighted paragraph environment
+\newtcolorbox{highlighted}[1]{
+  enhanced,
+  boxrule=0pt,
+  borderline west={1.5mm}{0pt}{#1},
+  left=2mm, right=2mm, top=1mm, bottom=1mm,
+  width=0.95\textwidth,
+  % title={#1},
+  % coltitle=black,   % Make the title text white (invisible on white background)
+  % colback=white, 
+  % colbacktitle=white,    % title background!
+  % fonttitle=\bfseries  % Bold title font
+}
+
+\newcommand{\installstep}[2]{%
+  \noindent
+  \begin{tabular}{ >{\raggedright\arraybackslash}m{0.4\textwidth}  @{\hspace{0.06\textwidth}} m{0.48\textwidth} }
+    #1 &
+    \includegraphics[width=\linewidth]{#2}
+  \end{tabular}
+  \par
+  \vspace{2em}
+}
+
+\newcommand{\warning}[1]{%
+  \noindent
+  \begin{highlighted}{red}
+    #1
+  \end{highlighted}
+  \par
+  \vspace{1.5em}
+}
+
+\newcommand{\notice}[1]{%
+  \noindent
+  \begin{highlighted}{dbteal}
+    #1
+  \end{highlighted}
+  \par
+  \vspace{1.5em}
+}
+
+\begin{document}
+\noindent
+\maketitle
+
+\warning{
+  Während der Installation darf man sich nicht im VPN bzw. im DB internen (W)LAN befinden, da sonst der MiKTeX-Paketserver (api2.miktex.org) nicht korrekt erreicht werden kann.
+}
+
+\notice{
+  Für die Installation auf Windows zunächst den \href{https://miktex.org/download}{\underline{Installer}} herunterladen. Diesen öffnen und die Lizenzbedingungen akzeptieren. Dann wie folgt vorgehen:
+}
+
+\installstep{
+  MiKTeX nur für den eigenen Windows User installieren. Admin-Berechtigungen sollten dafür nicht benötigt werden. Die Installation findet dann standardmäßig im Ordner /AppData/Local/Programs statt; das passt so.
+}{scope}
+
+\installstep{
+  Bei den allgemeinen Einstellungen die Optionen "A4" und "Yes" auswählen. In den folgenden Ansichten die Installation abschließen.
+}{preferences}
+
+\installstep{
+  Nach der Installation: nach der "MiKTeX Console" suchen und diese öffnen. In der Konsole den Abschnitt links "Updates" auswählen.
+}{console-search}
+
+\installstep{
+  Nach Updates suchen und (falls vorhanden) diese Updates mit "jetzt updaten" installieren.
+}{console-updates}
+
+\notice{
+  Jetzt sollte man mit LaTeX startklar sein. Ob die Installation funktioniert hat, kann man testen, indem man in der Windows Powershell (bzw. CMD) den Befehl \textit{where pdflatex} ausführt; es sollte der Installationspfad unter /AppData/ angezeigt werden.
+}
+
+\warning{
+  Sollte es beim Updaten zu Fehlern kommen, liegt es wahrscheinlich daran, dass man sich im VPN bzw. im DB internen (W)LAN befindet.
+}
+
+\warning{
+  Bei einer Re-Installation von MiKTeX kann es zu dem Fehler "MiKTeX Console is already running"\\ kommen, falls die Deinstallation nicht vollständig ausgeführt wurde. In diesem Fall zum Ordner C:/Users/NutzerName navigieren und die Datei miktex-console.lock löschen.
+}
+
+\end{document}
