@@ -12,6 +12,7 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage{helvet} % or try [scaled]{avant}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+\usepackage[absolute,overlay]{textpos}
 % display quotation marks ("") as their german counterparts („“)
 \usepackage{csquotes}
 \MakeOuterQuote{"}
@@ -22,7 +23,7 @@
 
 \definecolor{dbteal}{HTML}{1BA099} % Define the custom color
 
-\title{Installation von MiKTeX auf Windows}
+\title{\color{dbteal}\textbf{Installation von MiKTeX auf Windows}}
 \date{}
 
 % Define the highlighted paragraph environment
@@ -69,6 +70,11 @@
 
 \begin{document}
 \noindent
+
+\begin{textblock*}{3cm}(8.8cm,1.1cm)
+  {\includegraphics[width=3cm]{logo.png}}
+\end{textblock*}
+
 \maketitle
 
 \warning{
@@ -86,6 +92,11 @@
 \installstep{
   Bei den allgemeinen Einstellungen die Optionen "A4" und "Yes" auswählen. In den folgenden Ansichten die Installation abschließen.
 }{preferences}
+
+\begin{center}
+  \textit{Weiter auf Seite 2}
+\end{center}
+\pagebreak
 
 \installstep{
   Nach der Installation: nach der "MiKTeX Console" suchen und diese öffnen. In der Konsole den Abschnitt links "Updates" auswählen.
